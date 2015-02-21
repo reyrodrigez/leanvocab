@@ -1,10 +1,14 @@
 {
   "name": "leanvocab",
-  "version": "0.0.1",
+  "version": "1.0",
   "description": "Vocabulary app for learning new words.",
   "homepage": "",
-  "author": "Laszlo Heves",
+  "author": "Laszlo Heves <heves.laszlo@gmail.com>",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reyrodrigez/leanvocab.git"
+  },
   "dependencies": {
     "deployd": ">= 0"
   },
