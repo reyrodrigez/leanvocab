@@ -1,12 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src="dpd.js"></script>
-</head>
-<body>
-  <h1>Welcome to Deployd!</h1>
-  <p>You've just created a Deployd app. You can add front-end files in the <code>public</code> folder.</p>
-  <p>If you're new to Deployd, have a look at the <a href="http://docs.deployd.com/docs/getting-started/what-is-deployd.html">Getting Started Guide</a> or <a href="http://docs.deployd.com/docs/getting-started/your-first-api.html">Hello World Tutorial</a>.</p>
-</body>
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Vocabulary</title>
+		<meta name="description" content="Vocabulary">
+
+		<link rel="stylesheet" href="css/style.css">
+
+		<script data-main="js/main" src="js/vendors/require.js"></script>
+
+		<script type="text/template" id="app-template">
+			<div class="flipper">
+				<div class="js_card-front front"></div>
+
+				<div class="js_card-back back"></div>
+			</div>
+		</script>
+
+		<script type="text/template" id="question-template">
+			<%=hun%>
+		</script>
+
+		<script type="text/template" id="answer-template">
+			<%=eng%>
+			<a class="js-corrent">
+		</script>
+
+	</head>
+
+	<body>
+	</body>
 </html>
