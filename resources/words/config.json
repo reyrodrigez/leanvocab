@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"hun": {
+			"name": "hun",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "hun",
+			"order": 0
+		},
+		"eng": {
+			"name": "eng",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eng",
+			"order": 1
+		}
+	}
+}
