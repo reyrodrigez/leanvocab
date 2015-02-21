@@ -1,6 +1,6 @@
 {
   "name": "leanvocab",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Vocabulary app for learning new words.",
   "homepage": "",
   "author": "Laszlo Heves <heves.laszlo@gmail.com>",
@@ -14,6 +14,12 @@
   },
   "scripts": {
     "start": "node server.js"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-compass": "~1.0.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.6.1"
   },
   "engines": {
     "node": "0.10.x",
