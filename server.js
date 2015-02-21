@@ -6,9 +6,9 @@ var server = deployd({
   port: process.env.PORT || 5000,
   env: 'production',
   db: {
-    host: 'leanvocab.mongolab.com',
+    host: 'ds039271.mongolab.com',
     port: 39271,
-    name: 'database_name',
+    name: 'leanvocab',
     credentials: {
       username: 'leanvocab',
       password: 'Ij3vaUs4En5Keb'
