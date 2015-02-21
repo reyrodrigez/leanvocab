@@ -1,0 +1,19 @@
+{
+  "name": "leanvocab",
+  "version": "0.0.1",
+  "description": "Vocabulary app for learning new words.",
+  "keywords": [],
+  "homepage": "",
+  "author": "Laszlo Heves",
+  "dependencies": {
+    "deployd": ">= 0"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm":  "2.2.x"
+  },
+  "license": "MIT"
+}
