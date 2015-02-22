@@ -1,4 +1,5 @@
 /node_modules
 scss/.sass-cache
+.sass-cache
 /.dpd
 /data
