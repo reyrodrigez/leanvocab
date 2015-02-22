@@ -18,7 +18,7 @@ require.config({
         "login.view": "app/views/login.view",
 
 
-        "facebookSDK": "http://connect.facebook.net/en_US/all"
+        "facebookSDK": "//connect.facebook.net/en_US/all"
 
     },
     shim: {
