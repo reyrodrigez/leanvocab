@@ -3,7 +3,6 @@ define([
     'backbone',
     'marionette',
     'app',
-    'login.controller',
     'login.view',
     'question.view',
     'answer.view'
@@ -13,7 +12,6 @@ define([
         Backbone,
         Marionette,
         App,
-        LoginController,
         LoginView,
         QuestionView,
         AnswerView
@@ -44,7 +42,7 @@ define([
         },
 
         events: {
-            // click: 'onToggleHover'
+            click: 'onToggleHover'
         },
 
         collectionEvents: {
@@ -52,23 +50,13 @@ define([
         },
 
         initialize: function () {
-            var that = this;
 
             App.vent.listenTo(App.vent, 'asked', this.loadNewCardBack.bind(this));
             App.vent.listenTo(App.vent, 'answered', this.loadNewCardFront.bind(this));
+            this.collection = new WordCollection();
+            this.collection.fetch();
         },
 
-        // Render login view or fetch the words collection
-        onRender: function () {
-            if (!this._isloggedin) {
-                LoginController.start();
-                // this.renderLogin();
-            } else {
-
-                this.collection = new WordCollection();
-                this.collection.fetch();
-            }
-        },
 
         onCollectionSync: function () {
             this.model = this.getRandomModel();
@@ -83,11 +71,6 @@ define([
 
         renderBack: function (view) {
             this.cardBack.show(view);
-        },
-
-        renderLogin: function () {
-            var loginView = new LoginView();
-            this.loginBox.show(loginView);
         },
 
         onToggleHover: function () {

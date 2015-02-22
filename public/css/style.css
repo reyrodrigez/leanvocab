@@ -14,7 +14,7 @@ body {
 }
 
 /* line 36, ../../scss/style.scss */
-.login,
+.login-container,
 .app-container,
 .flip-container,
 .flipper,
@@ -101,22 +101,32 @@ h1 {
 }
 
 /* line 105, ../../scss/style.scss */
+.login-container {
+  position: absolute;
+  top: 0;
+  background-color: #25a99e;
+}
+/* line 110, ../../scss/style.scss */
+.login-container a {
+  color: #ffffff;
+  border: 2px #fff dashed;
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 3vw;
+  font-weight: 200;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: background-color ease-in 0.3s;
+}
+/* line 121, ../../scss/style.scss */
+.login-container a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 127, ../../scss/style.scss */
 .fb-login {
   position: absolute;
   z-index: 2;
   top: 50%;
-  left: 50%;
-  width: 125px;
-}
-
-/* line 115, ../../scss/style.scss */
-.fb-login-button {
-  width: 125px;
-}
-
-/* line 119, ../../scss/style.scss */
-.fb-login-button span,
-.fb-login-button iframe {
-  width: 125px !important;
-  height: 40px !important;
+  left: 35%;
 }

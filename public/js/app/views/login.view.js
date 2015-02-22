@@ -16,7 +16,19 @@ define([
 
         className: 'fb-login',
 
-        template: '#login-template'
+        template: '#login-template',
+
+        ui: {
+            'fbLoginBtn': '.js_fb-login-btn'
+        },
+
+        events: {
+            'click @ui.fbLoginBtn': 'onLogin'
+        },
+
+        onLogin: function () {
+            this.trigger('login:click');
+        }
 
     });
 

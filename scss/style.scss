@@ -28,7 +28,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-.login,
+.login-container,
 .app-container,
 .flip-container,
 .flipper,
@@ -102,21 +102,31 @@ h1 {
 }
 
 // Facebook login
+.login-container {
+	position: absolute;
+	top: 0;
+	background-color: #25a99e;
+
+	a {
+		color: #ffffff;
+		border: 2px #fff dashed;
+		padding: 0.6rem 2rem;
+		border-radius: 0.5rem;
+		font-size: 3vw;
+		font-weight: 200;
+		cursor: pointer;
+		background-color: rgba(255,255,255,0);
+		-webkit-transition: background-color ease-in 0.3s;
+
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+}
+
  .fb-login{
 	position: absolute;
 	z-index: 2;
 	top: 50%;
-	left: 50%;
-	width: 125px;
-
-}
-
-// Ugly Facebook login button hack :(
-.fb-login-button { 
-    width: 125px; 
-}
-.fb-login-button span, 
-.fb-login-button iframe {
-    width: 125px! important;
-    height: 40px! important;
+	left: 35%;
 }

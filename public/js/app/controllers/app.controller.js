@@ -1,0 +1,38 @@
+define([
+    'jquery',
+    'app',
+    'facebook.controller',
+    'app.view'
+], function(
+	$,
+	App,
+	FacebookController,
+	AppLayout
+){
+
+	"use strict";
+
+	var AppController = {
+		_start: function () {
+
+			FacebookController.checkLogin()
+				.done(function () {
+					var view = new AppLayout();
+
+					App.appRegion.show(view);
+					App.loginRegion.reset();
+				})
+				.fail(function () {
+					App.router.navigate('', {trigger: true});
+				});
+		},
+
+		API: {
+			start: function () {
+				AppController._start();
+			}
+		}
+	};
+
+    return AppController.API;
+});

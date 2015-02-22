@@ -1,5 +1,5 @@
 define([
-    "marionette",
+    "marionette"
 ], function(
 	Marionette
 ){
@@ -9,7 +9,9 @@ define([
     var App = new Marionette.Application();
 
     App.addRegions({
-		appRegion: '.app-container'
+		appRegion: '.app-container',
+		loginRegion: '.login-container'
+
     });
 
     return App;

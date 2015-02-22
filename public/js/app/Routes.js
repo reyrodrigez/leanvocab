@@ -1,22 +1,46 @@
 define([
+  'jquery',
   'backbone',
-  'app/controllers/loginController',
-  'app/views/postView'
-              
-  ], function(Backbone, LoginController, PostView){
+  'app.controller',
+  'login.controller',
+  'facebook.controller',
+  'vendors/jquery.cookie'
+  ], function(
+    $,
+    Backbone,
+    AppController,
+    LoginController,
+    FacebookController
+  ){
 
     "use strict";
 
     var Routes = Backbone.Router.extend({
 
       routes: {
-        // 'post/:id': 'renderPostView',
-        // 'user/:id': 'renderUserView',
-        '*path': 'defaultRoute' // default view
+        ''      : 'routeJunction',
+        'login' : 'loginRoute', // login
+        'start' : 'defaultRoute' // default view
+      },
+
+      routeJunction: function () {
+        var that = this;
+        FacebookController.checkLogin()
+          .done(function () {
+            that.navigate('start', {trigger: true});
+          })
+          .fail(function () {
+            that.navigate('login', {trigger: true});
+          });
+            
+      },
+
+      loginRoute: function () {
+        LoginController.start();
       },
 
       defaultRoute: function () {
-        LoginController.start();
+        AppController.start();
       }
 
     });

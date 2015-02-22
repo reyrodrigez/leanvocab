@@ -8,6 +8,7 @@ require.config({
         "app": "app/App",
 
          //controllers
+        "app.controller": "app/controllers/app.controller",
         "login.controller": "app/controllers/login.controller",
         "facebook.controller": "app/controllers/facebook.controller",
 
@@ -18,6 +19,7 @@ require.config({
         "login.view": "app/views/login.view",
 
 
+        "routes": "app/Routes",
         "facebookSDK": "//connect.facebook.net/en_US/all"
 
     },
@@ -34,14 +36,19 @@ require.config({
     }
 });
 require([
+    'backbone',
+    'routes',
     'app',
-    'app.view'
-], function(App, AppLayout) {
+    'app.view',
+    'facebook.controller'
+], function(Backbone, Routes, App, AppLayout, FacebookController) {
 
     App.start();
 
     App.addInitializer(function () {
-        App.appRegion.show(new AppLayout());
+        FacebookController.initFBApp();
+        App.router = new Routes();
+        Backbone.history.start();
     });
     
 
