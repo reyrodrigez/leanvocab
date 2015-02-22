@@ -104,8 +104,14 @@ h1 {
 // Facebook login
 .login-container {
 	position: absolute;
-	top: 0;
+	bottom: 0;
+	right: 0;
 	background-color: #25a99e;
+	-webkit-transition: bottom 0.3s ease-out;
+
+	&.loggedin {
+		bottom: -100%;
+	}
 
 	a {
 		color: #ffffff;

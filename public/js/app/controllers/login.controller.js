@@ -30,7 +30,7 @@ define([
 		},
 
 		_onLogin: function (e) {
-			FB.login(function (rsp) {
+			FB.login(function () {
 				App.router.navigate('', {trigger: true});
 			});
 		},

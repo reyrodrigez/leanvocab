@@ -103,10 +103,16 @@ h1 {
 /* line 105, ../../scss/style.scss */
 .login-container {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  right: 0;
   background-color: #25a99e;
+  -webkit-transition: bottom 0.3s ease-out;
 }
-/* line 110, ../../scss/style.scss */
+/* line 112, ../../scss/style.scss */
+.login-container.loggedin {
+  bottom: -100%;
+}
+/* line 116, ../../scss/style.scss */
 .login-container a {
   color: #ffffff;
   border: 2px #fff dashed;
@@ -118,12 +124,12 @@ h1 {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: background-color ease-in 0.3s;
 }
-/* line 121, ../../scss/style.scss */
+/* line 127, ../../scss/style.scss */
 .login-container a:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 127, ../../scss/style.scss */
+/* line 133, ../../scss/style.scss */
 .fb-login {
   position: absolute;
   z-index: 2;
