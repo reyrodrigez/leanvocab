@@ -13,7 +13,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 34, ../../scss/style.scss */
+/* line 36, ../../scss/style.scss */
+.login,
+.app-container,
 .flip-container,
 .flipper,
 .front,
@@ -22,7 +24,7 @@ body {
   height: 100%;
 }
 
-/* line 39, ../../scss/style.scss */
+/* line 41, ../../scss/style.scss */
 .front, .back {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -31,7 +33,7 @@ body {
   left: 0;
 }
 
-/* line 48, ../../scss/style.scss */
+/* line 50, ../../scss/style.scss */
 .flip-container {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
@@ -43,7 +45,7 @@ body {
   -ms-transform-style: preserve-3d;
 }
 
-/* line 58, ../../scss/style.scss */
+/* line 60, ../../scss/style.scss */
 .flipper {
   -webkit-transition: 0.6s;
   -webkit-transform-style: preserve-3d;
@@ -57,13 +59,13 @@ body {
   position: relative;
 }
 
-/* line 71, ../../scss/style.scss */
+/* line 73, ../../scss/style.scss */
 .front {
   z-index: 2;
   background-color: rgba(253, 45, 7, 0.6);
 }
 
-/* line 76, ../../scss/style.scss */
+/* line 78, ../../scss/style.scss */
 .back {
   background-color: rgba(37, 169, 158, 0.6);
   transform: rotateY(180deg);
@@ -71,19 +73,19 @@ body {
 }
 
 /* flip the pane when hovered */
-/* line 83, ../../scss/style.scss */
+/* line 85, ../../scss/style.scss */
 .flip-container.hover .flipper {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
 }
 
-/* line 88, ../../scss/style.scss */
+/* line 90, ../../scss/style.scss */
 .card {
   height: 100%;
   width: 100%;
 }
 
-/* line 93, ../../scss/style.scss */
+/* line 95, ../../scss/style.scss */
 h1 {
   position: relative;
   top: 50%;
@@ -96,4 +98,25 @@ h1 {
   text-align: center;
   font-weight: 200;
   color: white;
+}
+
+/* line 105, ../../scss/style.scss */
+.fb-login {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 125px;
+}
+
+/* line 115, ../../scss/style.scss */
+.fb-login-button {
+  width: 125px;
+}
+
+/* line 119, ../../scss/style.scss */
+.fb-login-button span,
+.fb-login-button iframe {
+  width: 125px !important;
+  height: 40px !important;
 }

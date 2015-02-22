@@ -3,6 +3,7 @@ define([
     'backbone',
     'marionette',
     'app',
+    'login.view',
     'question.view',
     'answer.view'
 
@@ -11,6 +12,7 @@ define([
         Backbone,
         Marionette,
         App,
+        LoginView,
         QuestionView,
         AnswerView
 ){
@@ -25,6 +27,8 @@ define([
 
         _isFirst: true,
 
+        _isloggedin: false,
+
         newModel: null,
 
         className: 'flip-container',
@@ -33,11 +37,12 @@ define([
 
         regions: {
             cardFront: ".js_card-front",
-            cardBack: ".js_card-back"
+            cardBack: ".js_card-back",
+            loginBox: ".js_login"
         },
 
         events: {
-            click: 'onToggleHover'
+            // click: 'onToggleHover'
         },
 
         collectionEvents: {
@@ -49,9 +54,18 @@ define([
 
             App.vent.listenTo(App.vent, 'asked', this.loadNewCardBack.bind(this));
             App.vent.listenTo(App.vent, 'answered', this.loadNewCardFront.bind(this));
+        },
 
-            this.collection = new WordCollection();
-            this.collection.fetch();
+        // Render login view or fetch the words collection
+        onRender: function () {
+            if (!this._isloggedin) {
+
+                this.renderLogin();
+            } else {
+
+                this.collection = new WordCollection();
+                this.collection.fetch();
+            }
         },
 
         onCollectionSync: function () {
@@ -67,6 +81,11 @@ define([
 
         renderBack: function (view) {
             this.cardBack.show(view);
+        },
+
+        renderLogin: function () {
+            var loginView = new LoginView();
+            this.loginBox.show(loginView);
         },
 
         onToggleHover: function () {

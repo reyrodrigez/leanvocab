@@ -21,7 +21,6 @@ html {
 }
 
 body {
-	color: red;
 	@include on-the-edge;
 	height: 100%;
 	font-family: Helvetica Neue, Helvetica, sans-serif;
@@ -29,6 +28,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.login,
+.app-container,
 .flip-container,
 .flipper,
 .front,
@@ -98,4 +99,24 @@ h1 {
 	text-align: center;
 	font-weight: 200;
 	color: $primary-color;
+}
+
+// Facebook login
+ .fb-login{
+	position: relative;
+	z-index: 2;
+	margin: 0 auto;
+	padding-top: 30px;
+	width: 125px;
+
+}
+
+// Ugly Facebook login button hack :(
+.fb-login-button { 
+    width: 125px; 
+}
+.fb-login-button span, 
+.fb-login-button iframe {
+    width: 125px! important;
+    height: 40px! important;
 }

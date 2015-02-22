@@ -13,7 +13,8 @@ require.config({
 
         //views
         "question.view": "app/views/question.view",
-        "answer.view": "app/views/answer.view"
+        "answer.view": "app/views/answer.view",
+        "login.view": "app/views/login.view"
 
     },
     shim: {

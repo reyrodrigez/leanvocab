@@ -9,7 +9,7 @@ define([
     var App = new Marionette.Application();
 
     App.addRegions({
-		appRegion: 'body'
+		appRegion: '.app-container'
     });
 
     return App;
