@@ -1,14 +1,16 @@
 define([
     "jquery",
+    "facebook.controller"
 ], function(
-	$
+	$,
+	FacebookController
 ){
 
 	"use strict";
 
 	var LoginController = {
 		_start: function () {
-			debugger;
+			FacebookController.initialize();
 		},
 
 		API: {

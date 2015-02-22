@@ -3,6 +3,7 @@ define([
     'backbone',
     'marionette',
     'app',
+    'login.controller',
     'login.view',
     'question.view',
     'answer.view'
@@ -12,6 +13,7 @@ define([
         Backbone,
         Marionette,
         App,
+        LoginController,
         LoginView,
         QuestionView,
         AnswerView
@@ -59,8 +61,8 @@ define([
         // Render login view or fetch the words collection
         onRender: function () {
             if (!this._isloggedin) {
-
-                this.renderLogin();
+                LoginController.start();
+                // this.renderLogin();
             } else {
 
                 this.collection = new WordCollection();

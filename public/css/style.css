@@ -102,10 +102,10 @@ h1 {
 
 /* line 105, ../../scss/style.scss */
 .fb-login {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  margin: 0 auto;
-  padding-top: 30px;
+  top: 50%;
+  left: 50%;
   width: 125px;
 }
 

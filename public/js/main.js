@@ -7,14 +7,18 @@ require.config({
         "marionette": "vendors/backbone.marionette.min",
         "app": "app/App",
 
-         //app
-        "app.controller": "app/controllers/app.controller",
-        "app.view": "app/views/app.view",
+         //controllers
+        "login.controller": "app/controllers/login.controller",
+        "facebook.controller": "app/controllers/facebook.controller",
 
         //views
+        "app.view": "app/views/app.view",
         "question.view": "app/views/question.view",
         "answer.view": "app/views/answer.view",
-        "login.view": "app/views/login.view"
+        "login.view": "app/views/login.view",
+
+
+        "facebookSDK": "http://connect.facebook.net/en_US/all"
 
     },
     shim: {
@@ -23,6 +27,9 @@ require.config({
             deps: ["jquery", "underscore"],
                         //custom export name, this would be lowercase otherwise
             exports: "Marionette"
+        },
+        "facebookSDK" : {
+            exports: "FB"
         }
     }
 });
