@@ -2,6 +2,7 @@ define([
   'jquery',
   'backbone',
   'app.controller',
+  'addword.controller',
   'login.controller',
   'facebook.controller',
   'vendors/jquery.cookie'
@@ -9,6 +10,7 @@ define([
     $,
     Backbone,
     AppController,
+    AddWordController,
     LoginController,
     FacebookController
   ){
@@ -20,7 +22,8 @@ define([
       routes: {
         ''      : 'routeJunction',
         'login' : 'loginRoute', // login
-        'start' : 'defaultRoute' // default view
+        'start' : 'defaultRoute', // default view
+        'add'   : 'addWord'
       },
 
       routeJunction: function () {
@@ -41,6 +44,10 @@ define([
 
       defaultRoute: function () {
         AppController.start();
+      },
+
+      addWord: function () {
+        AddWordController.start();
       }
 
     });

@@ -3,6 +3,9 @@ $base-unit: 16px;
 $primary-color: #ffffff;
 $body-bg: #59488b;
 
+$front-color: rgba(253,45,7,0.6);
+$back-color: rgba(37,169,158,0.6);
+
 @mixin vertical-align {
 	position: relative;
 	top: 50%;
@@ -16,14 +19,18 @@ $body-bg: #59488b;
 	padding: 0;
 }
 
+@mixin helvetica {
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
 html {
 	height: 100%;
 }
 
 body {
 	@include on-the-edge;
+	@include helvetica;
 	height: 100%;
-	font-family: Helvetica Neue, Helvetica, sans-serif;
 	background: $primary-color;
 	-webkit-font-smoothing: antialiased;
 }
@@ -31,6 +38,7 @@ body {
 .login-container,
 .app-container,
 .flip-container,
+.add-word-container,
 .flipper,
 .front,
 .back {
@@ -46,6 +54,13 @@ body {
 	left: 0;
 }
 
+.app-container {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
 
 .flip-container {
 	-webkit-perspective: 1000;
@@ -57,6 +72,7 @@ body {
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
 }
+
 .flipper {
 	-webkit-transition: 0.6s;
 	-webkit-transform-style: preserve-3d;
@@ -72,11 +88,11 @@ body {
 
 .front {
 	z-index: 2;
-	background-color: rgba(253,45,7,0.6);
+	background-color: $front-color;
 }
 
 .back {
-	background-color: rgba(37,169,158,0.6);
+	background-color: $back-color;
 	transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
 }
@@ -106,11 +122,12 @@ h1 {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	background-color: #25a99e;
+	background-color: $front-color;
 	-webkit-transition: bottom 0.3s ease-out;
+	display: block;
 
 	&.loggedin {
-		bottom: -100%;
+		display: none;
 	}
 
 	a {
@@ -135,4 +152,43 @@ h1 {
 	z-index: 2;
 	top: 50%;
 	left: 35%;
+}
+
+.add-word-container {
+	position: absolute;
+	top: 0;
+	background-color: $front-color;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.addword {
+	width: 50%;
+	margin: 10% auto;
+	text-align: center;
+}
+
+.word-input {
+	padding: 1rem;
+	font-size: 1rem;
+	border: none;
+	display: block;
+	width: 22rem;
+	margin: 0.5rem auto;
+}
+
+input[type="submit"] {
+	@include helvetica;
+	background: $back-color;
+	border: none;
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	margin: auto;
+	border-radius: 50%;
+	font-size: 3rem;
+	color: #ffffff;
 }

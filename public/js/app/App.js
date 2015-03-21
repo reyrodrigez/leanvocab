@@ -10,7 +10,8 @@ define([
 
     App.addRegions({
 		appRegion: '.app-container',
-		loginRegion: '.login-container'
+		loginRegion: '.login-container',
+		addWordRegion: '.add-word-container'
 
     });
 

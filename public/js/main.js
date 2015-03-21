@@ -9,11 +9,13 @@ require.config({
 
          //controllers
         "app.controller": "app/controllers/app.controller",
+        "addword.controller": "app/controllers/addword.controller",
         "login.controller": "app/controllers/login.controller",
         "facebook.controller": "app/controllers/facebook.controller",
 
         //views
         "app.view": "app/views/app.view",
+        "addword.view": "app/views/addword.view",
         "question.view": "app/views/question.view",
         "answer.view": "app/views/answer.view",
         "login.view": "app/views/login.view",

@@ -1,22 +1,23 @@
-/* line 19, ../../scss/style.scss */
+/* line 26, ../../scss/style.scss */
 html {
   height: 100%;
 }
 
-/* line 23, ../../scss/style.scss */
+/* line 30, ../../scss/style.scss */
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: Helvetica Neue, Helvetica, sans-serif;
+  height: 100%;
   background: white;
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 36, ../../scss/style.scss */
+/* line 44, ../../scss/style.scss */
 .login-container,
 .app-container,
 .flip-container,
+.add-word-container,
 .flipper,
 .front,
 .back {
@@ -24,7 +25,7 @@ body {
   height: 100%;
 }
 
-/* line 41, ../../scss/style.scss */
+/* line 49, ../../scss/style.scss */
 .front, .back {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -33,7 +34,16 @@ body {
   left: 0;
 }
 
-/* line 50, ../../scss/style.scss */
+/* line 57, ../../scss/style.scss */
+.app-container {
+  display: none;
+}
+/* line 60, ../../scss/style.scss */
+.app-container.active {
+  display: block;
+}
+
+/* line 65, ../../scss/style.scss */
 .flip-container {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
@@ -45,7 +55,7 @@ body {
   -ms-transform-style: preserve-3d;
 }
 
-/* line 60, ../../scss/style.scss */
+/* line 76, ../../scss/style.scss */
 .flipper {
   -webkit-transition: 0.6s;
   -webkit-transform-style: preserve-3d;
@@ -59,13 +69,13 @@ body {
   position: relative;
 }
 
-/* line 73, ../../scss/style.scss */
+/* line 89, ../../scss/style.scss */
 .front {
   z-index: 2;
   background-color: rgba(253, 45, 7, 0.6);
 }
 
-/* line 78, ../../scss/style.scss */
+/* line 94, ../../scss/style.scss */
 .back {
   background-color: rgba(37, 169, 158, 0.6);
   transform: rotateY(180deg);
@@ -73,19 +83,19 @@ body {
 }
 
 /* flip the pane when hovered */
-/* line 85, ../../scss/style.scss */
+/* line 101, ../../scss/style.scss */
 .flip-container.hover .flipper {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
 }
 
-/* line 90, ../../scss/style.scss */
+/* line 106, ../../scss/style.scss */
 .card {
   height: 100%;
   width: 100%;
 }
 
-/* line 95, ../../scss/style.scss */
+/* line 111, ../../scss/style.scss */
 h1 {
   position: relative;
   top: 50%;
@@ -100,19 +110,20 @@ h1 {
   color: white;
 }
 
-/* line 105, ../../scss/style.scss */
+/* line 121, ../../scss/style.scss */
 .login-container {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #25a99e;
+  background-color: rgba(253, 45, 7, 0.6);
   -webkit-transition: bottom 0.3s ease-out;
+  display: block;
 }
-/* line 112, ../../scss/style.scss */
+/* line 129, ../../scss/style.scss */
 .login-container.loggedin {
-  bottom: -100%;
+  display: none;
 }
-/* line 116, ../../scss/style.scss */
+/* line 133, ../../scss/style.scss */
 .login-container a {
   color: #ffffff;
   border: 2px #fff dashed;
@@ -124,15 +135,58 @@ h1 {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: background-color ease-in 0.3s;
 }
-/* line 127, ../../scss/style.scss */
+/* line 144, ../../scss/style.scss */
 .login-container a:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 133, ../../scss/style.scss */
+/* line 150, ../../scss/style.scss */
 .fb-login {
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 35%;
+}
+
+/* line 157, ../../scss/style.scss */
+.add-word-container {
+  position: absolute;
+  top: 0;
+  background-color: rgba(253, 45, 7, 0.6);
+  display: none;
+}
+/* line 163, ../../scss/style.scss */
+.add-word-container.active {
+  display: block;
+}
+
+/* line 168, ../../scss/style.scss */
+.addword {
+  width: 50%;
+  margin: 10% auto;
+  text-align: center;
+}
+
+/* line 174, ../../scss/style.scss */
+.word-input {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  display: block;
+  width: 22rem;
+  margin: 0.5rem auto;
+}
+
+/* line 183, ../../scss/style.scss */
+input[type="submit"] {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  background: rgba(37, 169, 158, 0.6);
+  border: none;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: auto;
+  border-radius: 50%;
+  font-size: 3rem;
+  color: #ffffff;
 }

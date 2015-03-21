@@ -20,6 +20,8 @@ define([
 					var view = new AppLayout();
 
 					App.appRegion.show(view);
+					
+					App.appRegion.$el.addClass('active');
 
 					App.loginRegion.$el.addClass('loggedin');
 					App.loginRegion.reset();
