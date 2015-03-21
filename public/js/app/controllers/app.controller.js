@@ -25,6 +25,8 @@ define([
 
 					App.loginRegion.$el.addClass('loggedin');
 					App.loginRegion.reset();
+
+					App.addWordRegion.reset();
 				})
 				.fail(function () {
 					App.router.navigate('', {trigger: true});

@@ -24,6 +24,7 @@ define([
 
 					App.loginRegion.$el.addClass('loggedin');
 					App.loginRegion.reset();
+					App.appRegion.reset();
 			})
 			.fail(function () {
 				App.router.navigate('', {trigger: true});
