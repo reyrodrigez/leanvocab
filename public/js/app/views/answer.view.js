@@ -1,8 +1,10 @@
 define([
     'marionette',
+    'jquery',
     'app'
     ], function(
         Marionette,
+        $,
         App
 ){
 
@@ -12,14 +14,24 @@ define([
 
         template: '#answer-template',
 
-        tagName: 'h1',
+        ui: {
+            'answerBtn' : '.js_answer-btn'
+        },
 
         events: {
+            'click @ui.answerBtn' : 'onAnswerBtnClicked',
             'click': 'onAnswered'
         },
 
         onAnswered: function () {
             App.vent.trigger('answered');
+        },
+
+        onAnswerBtnClicked: function (e) {
+            e.stopPropagation();
+            var answerQuality = $(e.currentTarget).data('quality');
+            alert(answerQuality);
+
         }
 
     });

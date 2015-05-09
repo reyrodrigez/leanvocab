@@ -9,15 +9,15 @@
 
 		<link rel="stylesheet" href="css/style.css">
 
-		<script src="/dpd.js" type="text/javascript"></script>
+		<!--<script src="/dpd.js" type="text/javascript"></script>-->
 
 		<script data-main="js/main" src="js/vendors/require.js"></script>
 
 		<script type="text/template" id="app-template">
 			<div class="flipper">
-				<div class="js_card-front front"></div>
+				<div class="js_card-front card front"></div>
 
-				<div class="js_card-back back"></div>
+				<div class="js_card-back card back"></div>
 
 				<div class="js_login login"></div>
 			</div>
@@ -28,7 +28,12 @@
 		</script>
 
 		<script type="text/template" id="answer-template">
-			<%=eng%>
+			<h1><%=eng%></h1>
+			<div class="answerbtns">
+				<div data-quality="right" class="js_answer-btn answer--btn answer--btn__correct">yes</div>
+				<div data-quality="almost" class="js_answer-btn answer--btn answer--btn__almost">~</div>
+				<div data-quality="false" class="js_answer-btn answer--btn answer--btn__false">no</div>
+			</div>
 		</script>
 
 		<script type="text/template" id="login-template">

@@ -19,8 +19,8 @@ body {
 .flip-container,
 .add-word-container,
 .flipper,
-.front,
-.back {
+.card,
+.card > div {
   width: 100%;
   height: 100%;
 }
@@ -189,4 +189,29 @@ input[type="submit"] {
   border-radius: 50%;
   font-size: 3rem;
   color: #ffffff;
+}
+
+/* line 196, ../../scss/style.scss */
+.answerbtns {
+  position: absolute;
+  text-align: center;
+  bottom: 2vw;
+  left: 25%;
+  width: 50%;
+}
+
+/* line 204, ../../scss/style.scss */
+.answer--btn {
+  display: inline-block;
+  width: 9vw;
+  height: 9vw;
+  line-height: 9vw;
+  margin: 0 3vw;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 100%;
+  color: rgba(253, 45, 7, 0.6);
+  font-size: 3vw;
+  opacity: 0.8;
+  transition: all 0.15s ease-out;
 }
