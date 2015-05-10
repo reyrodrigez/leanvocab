@@ -41,10 +41,12 @@ define([
                 method: 'POST',
                 data: {
                     hun: originWord,
-                    eng: targetWord
+                    eng: targetWord,
+                    answersCount: {}
                 }
             }).done(function (){
                 alert('saved');
+                that.model.collection.fetch();
             });
         }
 
