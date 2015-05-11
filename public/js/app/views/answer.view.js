@@ -23,6 +23,13 @@ define([
             'click': 'onAnswered'
         },
 
+        initialize: function () {
+            var that = this;
+            this.listenTo(this.model, 'count:saved', function () {
+                that.$el.trigger('click');
+            });
+        },
+
         onAnswered: function () {
             App.vent.trigger('answered');
         },
@@ -55,20 +62,9 @@ define([
                 answerUpdate = JSON.stringify(answerCountObj);
 
             }
-            
-            $.ajax('/words', {
-                dataType: 'json',
-                method: 'PUT',
-                data: {
-                    id: id,
-                    answersCount: answerUpdate
-                }
-            }).done(function () {
-                // this hack prevents the cached model to update with the wrong answerCount
-                // the fetch should occur on the model base
-                that.model.collection.fetch();
-                that.$el.trigger('click');
-            });
+
+            this.model.save({answersCount: answerUpdate});
+
         }
 
     });

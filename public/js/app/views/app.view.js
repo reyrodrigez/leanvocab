@@ -19,7 +19,30 @@ define([
 
     'use strict';
 
+    var WordModel = Backbone.Model.extend({
+
+        sync: function (method, model, options) {
+            var that = this;
+            if (method === 'update') {
+                $.ajax('/words', {
+                    dataType: 'json',
+                    method: 'PUT',
+                    data: {
+                        id: model.get('id'),
+                        answersCount: model.get('answersCount')
+                    }
+                }).done(function () {
+                    that.trigger('count:saved');
+                });
+            }
+        }
+
+    });
+
     var WordCollection = Backbone.Collection.extend({
+
+        model: WordModel,
+
         url: '/words'
     });
 
