@@ -4,6 +4,13 @@ html {
 }
 
 /* line 30, ../../scss/style.scss */
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 36, ../../scss/style.scss */
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 44, ../../scss/style.scss */
+/* line 50, ../../scss/style.scss */
 .login-container,
 .app-container,
 .flip-container,
@@ -25,7 +32,12 @@ body {
   height: 100%;
 }
 
-/* line 49, ../../scss/style.scss */
+/* line 55, ../../scss/style.scss */
+.add-word-container {
+  padding: 3rem;
+}
+
+/* line 59, ../../scss/style.scss */
 .front, .back {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -34,16 +46,21 @@ body {
   left: 0;
 }
 
-/* line 57, ../../scss/style.scss */
+/* line 67, ../../scss/style.scss */
 .app-container {
   display: none;
 }
-/* line 60, ../../scss/style.scss */
+/* line 70, ../../scss/style.scss */
 .app-container.active {
   display: block;
 }
 
-/* line 65, ../../scss/style.scss */
+/* line 75, ../../scss/style.scss */
+.main-container {
+  padding: 3rem;
+}
+
+/* line 79, ../../scss/style.scss */
 .flip-container {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
@@ -55,7 +72,7 @@ body {
   -ms-transform-style: preserve-3d;
 }
 
-/* line 76, ../../scss/style.scss */
+/* line 90, ../../scss/style.scss */
 .flipper {
   -webkit-transition: 0.6s;
   -webkit-transform-style: preserve-3d;
@@ -69,13 +86,13 @@ body {
   position: relative;
 }
 
-/* line 89, ../../scss/style.scss */
+/* line 103, ../../scss/style.scss */
 .front {
   z-index: 2;
   background-color: rgba(253, 45, 7, 0.6);
 }
 
-/* line 94, ../../scss/style.scss */
+/* line 108, ../../scss/style.scss */
 .back {
   background-color: rgba(37, 169, 158, 0.6);
   transform: rotateY(180deg);
@@ -83,19 +100,19 @@ body {
 }
 
 /* flip the pane when hovered */
-/* line 101, ../../scss/style.scss */
+/* line 115, ../../scss/style.scss */
 .flip-container.hover .flipper {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
 }
 
-/* line 106, ../../scss/style.scss */
+/* line 120, ../../scss/style.scss */
 .card {
   height: 100%;
   width: 100%;
 }
 
-/* line 111, ../../scss/style.scss */
+/* line 125, ../../scss/style.scss */
 h1 {
   position: relative;
   top: 50%;
@@ -110,7 +127,7 @@ h1 {
   color: white;
 }
 
-/* line 121, ../../scss/style.scss */
+/* line 135, ../../scss/style.scss */
 .login-container {
   position: absolute;
   bottom: 0;
@@ -119,11 +136,11 @@ h1 {
   -webkit-transition: bottom 0.3s ease-out;
   display: block;
 }
-/* line 129, ../../scss/style.scss */
+/* line 143, ../../scss/style.scss */
 .login-container.loggedin {
   display: none;
 }
-/* line 133, ../../scss/style.scss */
+/* line 147, ../../scss/style.scss */
 .login-container a {
   color: #ffffff;
   border: 2px #fff dashed;
@@ -135,12 +152,12 @@ h1 {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: background-color ease-in 0.3s;
 }
-/* line 144, ../../scss/style.scss */
+/* line 158, ../../scss/style.scss */
 .login-container a:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 150, ../../scss/style.scss */
+/* line 164, ../../scss/style.scss */
 .fb-login {
   position: absolute;
   z-index: 2;
@@ -148,50 +165,71 @@ h1 {
   left: 35%;
 }
 
-/* line 157, ../../scss/style.scss */
+/* line 171, ../../scss/style.scss */
 .add-word-container {
   position: absolute;
   top: 0;
   background-color: rgba(253, 45, 7, 0.6);
   display: none;
 }
-/* line 163, ../../scss/style.scss */
+/* line 177, ../../scss/style.scss */
 .add-word-container.active {
   display: block;
 }
 
-/* line 168, ../../scss/style.scss */
+/* line 182, ../../scss/style.scss */
 .addword {
-  width: 50%;
-  margin: 10% auto;
-  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-/* line 174, ../../scss/style.scss */
+/* line 186, ../../scss/style.scss */
 .word-input {
-  padding: 1rem;
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  text-align: center;
   font-size: 1rem;
+  color: #aaaaaa;
   border: none;
-  display: block;
-  width: 22rem;
-  margin: 0.5rem auto;
+  opacity: 0.6;
+  transition: all 0.15s ease-out;
+}
+/* line 199, ../../scss/style.scss */
+.word-input.active, .word-input:focus {
+  opacity: 1;
 }
 
-/* line 183, ../../scss/style.scss */
-input[type="submit"] {
-  font-family: Helvetica Neue, Helvetica, sans-serif;
-  background: rgba(37, 169, 158, 0.6);
-  border: none;
-  display: block;
-  width: 4rem;
-  height: 4rem;
-  margin: auto;
-  border-radius: 50%;
-  font-size: 3rem;
-  color: #ffffff;
+/* line 204, ../../scss/style.scss */
+.submit {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+/* line 211, ../../scss/style.scss */
+.submit:hover .icon.active,
+.submit .icon.active.sucess {
+  opacity: 1;
+}
+/* line 215, ../../scss/style.scss */
+.submit .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+/* line 222, ../../scss/style.scss */
+.submit .icon.active {
+  opacity: 0.6;
 }
 
-/* line 196, ../../scss/style.scss */
+/* line 229, ../../scss/style.scss */
 .answerbtns {
   position: absolute;
   text-align: center;
@@ -200,7 +238,7 @@ input[type="submit"] {
   width: 50%;
 }
 
-/* line 204, ../../scss/style.scss */
+/* line 237, ../../scss/style.scss */
 .answer--btn {
   display: inline-block;
   width: 9vw;
