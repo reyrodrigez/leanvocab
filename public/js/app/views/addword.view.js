@@ -59,8 +59,16 @@ define([
             }).done(function (){
                 $(that.ui.addBtn).removeClass('active');
                 $(that.ui.successBtn).addClass('active');
-                that.model.collection.fetch();
+                // that.model.collection.fetch();
+                window.setTimeOut(that.resetView, 3000);
             });
+        },
+
+        resetView: function () {
+            $(that.ui.successBtn).removeClass('active');
+            $(that.ui.addBtn).addClass('active');
+            $(this.ui.originInput).val("");
+            $(this.ui.targetInput).val("");
         }
 
     });
