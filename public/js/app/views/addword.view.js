@@ -21,20 +21,32 @@ define([
         ui: {
             'originInput': '.js_original-language',
             'targetInput': '.js_target-language',
-            'submit': '.js_submit'
+            'addBtn': '.js_add-button',
+            'successBtn': '.js_success-button',
+            'wordInput': '.js_word-input',
+            'submitBtn': '.js_submit'
         },
 
         events: {
-            'submit' : 'onSubmitForm'
+            'keyup @ui.wordInput': 'toggleActive',
+            'click @ui.submitBtn' : 'onSubmitForm'
+        },
+
+        /**
+         * toggle `active` class on input element if it has content
+         * @param  {object} e keyup event
+         */
+        toggleActive: function (e) {
+            var $trg = $(e.currentTarget);
+            $trg.toggleClass('active', ($trg.val() !== ''));
         },
 
         onSubmitForm: function (e) {
+            var that = this;
             e.preventDefault();
 
             var originWord = $(this.ui.originInput).val().trim();
             var targetWord = $(this.ui.targetInput).val().trim();
-
-            console.log(originWord + '/' + targetWord);
 
             $.ajax('/words', {
                 dataType: 'json',
@@ -45,7 +57,8 @@ define([
                     answersCount: {}
                 }
             }).done(function (){
-                alert('saved');
+                $(that.ui.addBtn).removeClass('active');
+                $(that.ui.successBtn).addClass('active');
                 that.model.collection.fetch();
             });
         }

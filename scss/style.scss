@@ -27,6 +27,12 @@ html {
 	height: 100%;
 }
 
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 body {
 	@include on-the-edge;
 	@include helvetica;
@@ -46,6 +52,10 @@ body {
 	height: 100%;
 }
 
+.add-word-container {
+	padding: 3rem;
+}
+
 .front, .back {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
@@ -60,6 +70,10 @@ body {
 	&.active {
 		display: block;
 	}
+}
+
+.main-container {
+	padding: 3rem;
 }
 
 .flip-container {
@@ -166,32 +180,51 @@ h1 {
 }
 
 .addword {
-	width: 50%;
-	margin: 10% auto;
-	text-align: center;
+	@include vertical-align;
 }
 
 .word-input {
-	padding: 1rem;
-	font-size: 1rem;
-	border: none;
 	display: block;
-	width: 22rem;
-	margin: 0.5rem auto;
+	width: 100%;
+	padding: 1.5rem;
+	margin: 1rem auto;
+	text-align: center;
+	font-size: 1rem;
+	color: #aaaaaa;
+	border: none;
+	opacity: 0.6;
+	transition: all 0.15s ease-out;
+
+	&.active,
+	&:focus {
+		opacity: 1;
+	}
 }
 
-input[type="submit"] {
-	@include helvetica;
-	background: $back-color;
-	border: none;
-	display: block;
-	width: 4rem;
-	height: 4rem;
-	margin: auto;
-	border-radius: 50%;
-	font-size: 3rem;
-	color: #ffffff;
+.submit {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+
+	&:hover .icon.active,
+	.icon.active.sucess {
+		opacity: 1;
+	}
+
+	.icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: all 0.15s ease-out;
+
+		&.active {
+			opacity: 0.6;
+		}
+	}
 }
+
 
 .answerbtns {
 	position: absolute;
