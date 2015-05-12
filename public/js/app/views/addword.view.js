@@ -60,7 +60,7 @@ define([
                 $(that.ui.addBtn).removeClass('active');
                 $(that.ui.successBtn).addClass('active');
                 // that.model.collection.fetch();
-                window.setTimeOut(that.resetView, 3000);
+                window.setTimeout(that.resetView, 3000);
             });
         },
 
