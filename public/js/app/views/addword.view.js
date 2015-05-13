@@ -60,13 +60,14 @@ define([
                 $(that.ui.addBtn).removeClass('active');
                 $(that.ui.successBtn).addClass('active');
                 // that.model.collection.fetch();
-                window.setTimeout(that.resetView, 3000);
+                window.setTimeout(that.resetView.bind(that), 1000);
             });
         },
 
         resetView: function () {
-            $(that.ui.successBtn).removeClass('active');
-            $(that.ui.addBtn).addClass('active');
+            $(this.ui.successBtn).removeClass('active');
+            $(this.ui.wordInput).removeClass('active');
+            $(this.ui.addBtn).addClass('active');
             $(this.ui.originInput).val("");
             $(this.ui.targetInput).val("");
         }
