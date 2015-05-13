@@ -207,8 +207,7 @@ h1 {
 	height: 120px;
 	margin: 0 auto;
 
-	&:hover .icon.active,
-	.icon.active.sucess {
+	&:hover .icon.active{
 		opacity: 1;
 	}
 

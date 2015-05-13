@@ -211,12 +211,11 @@ h1 {
   height: 120px;
   margin: 0 auto;
 }
-/* line 211, ../../scss/style.scss */
-.submit:hover .icon.active,
-.submit .icon.active.sucess {
+/* line 210, ../../scss/style.scss */
+.submit:hover .icon.active {
   opacity: 1;
 }
-/* line 215, ../../scss/style.scss */
+/* line 214, ../../scss/style.scss */
 .submit .icon {
   position: absolute;
   top: 0;
@@ -224,12 +223,12 @@ h1 {
   opacity: 0;
   transition: all 0.15s ease-out;
 }
-/* line 222, ../../scss/style.scss */
+/* line 221, ../../scss/style.scss */
 .submit .icon.active {
   opacity: 0.6;
 }
 
-/* line 229, ../../scss/style.scss */
+/* line 228, ../../scss/style.scss */
 .answerbtns {
   position: absolute;
   text-align: center;
@@ -238,7 +237,7 @@ h1 {
   width: 50%;
 }
 
-/* line 237, ../../scss/style.scss */
+/* line 236, ../../scss/style.scss */
 .answer--btn {
   display: inline-block;
   width: 9vw;
