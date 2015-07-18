@@ -22,7 +22,7 @@ require.config({
 
 
         "routes": "app/Routes",
-        "facebookSDK": "//connect.facebook.net/en_US/all"
+        "facebookSDK": "http://connect.facebook.net/en_US/all"
 
     },
     shim: {

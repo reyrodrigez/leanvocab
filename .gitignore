@@ -1,6 +1,11 @@
-/node_modules
-/design
-scss/.sass-cache
+node_modules
+dist
+.tmp
+bower_components
 .sass-cache
-/.dpd
-/data
+data
+design
+resources
+.DS_Store
+app.dpd
+.dpd
