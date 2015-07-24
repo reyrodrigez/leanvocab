@@ -2,10 +2,3 @@ node_modules
 dist
 .tmp
 bower_components
-.sass-cache
-data
-design
-resources
-.DS_Store
-app.dpd
-.dpd
