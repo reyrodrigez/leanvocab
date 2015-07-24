@@ -1,5 +1,6 @@
-node_modules
-dist
-.tmp
-bower_components
-dpd-dev
+/node_modules
+/design
+scss/.sass-cache
+.sass-cache
+/.dpd
+/data

@@ -1,0 +1,250 @@
+$base-unit: 16px;
+
+$primary-color: #ffffff;
+$body-bg: #59488b;
+
+$front-color: rgba(253,45,7,0.6);
+$back-color: rgba(37,169,158,0.6);
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin on-the-edge {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin helvetica {
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
+html {
+	height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+	@include on-the-edge;
+	@include helvetica;
+	height: 100%;
+	background: $primary-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+.login-container,
+.app-container,
+.flip-container,
+.add-word-container,
+.flipper,
+.card,
+.card > div {
+	width: 100%;
+	height: 100%;
+}
+
+.add-word-container {
+	padding: 3rem;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.app-container {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.main-container {
+	padding: 3rem;
+}
+
+.flip-container {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
+	-ms-transform: perspective(1000px);
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+}
+
+.flipper {
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-ms-transition: 0.6s;
+	-moz-transition: 0.6s;
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front {
+	z-index: 2;
+	background-color: $front-color;
+}
+
+.back {
+	background-color: $back-color;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+
+/* flip the pane when hovered */
+.flip-container.hover .flipper {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+
+.card {
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	@include vertical-align;
+	@include on-the-edge;
+	font-size: 13vw;
+	text-align: center;
+	font-weight: 200;
+	color: $primary-color;
+}
+
+// Facebook login
+.login-container {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: $front-color;
+	-webkit-transition: bottom 0.3s ease-out;
+	display: block;
+
+	&.loggedin {
+		display: none;
+	}
+
+	a {
+		color: #ffffff;
+		border: 2px #fff dashed;
+		padding: 0.6rem 2rem;
+		border-radius: 0.5rem;
+		font-size: 3vw;
+		font-weight: 200;
+		cursor: pointer;
+		background-color: rgba(255,255,255,0);
+		-webkit-transition: background-color ease-in 0.3s;
+
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+}
+
+ .fb-login{
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 35%;
+}
+
+.add-word-container {
+	position: absolute;
+	top: 0;
+	background-color: $front-color;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.addword {
+	@include vertical-align;
+}
+
+.word-input {
+	display: block;
+	width: 100%;
+	padding: 1.5rem;
+	margin: 1rem auto;
+	text-align: center;
+	font-size: 1rem;
+	color: #aaaaaa;
+	border: none;
+	opacity: 0.6;
+	transition: all 0.15s ease-out;
+
+	&.active,
+	&:focus {
+		opacity: 1;
+	}
+}
+
+.submit {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+
+	&:hover .icon.active{
+		opacity: 1;
+	}
+
+	.icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: all 0.15s ease-out;
+
+		&.active {
+			opacity: 0.6;
+		}
+	}
+}
+
+
+.answerbtns {
+	position: absolute;
+	text-align: center;
+	bottom: 2vw;
+	left: 25%;
+	width: 50%;
+}
+
+.answer--btn {
+	display: inline-block;
+	width: 9vw;
+	height: 9vw;
+	line-height: 9vw;
+	margin: 0 3vw;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 100%;
+	color: $front-color; 
+	font-size: 3vw;
+	opacity: 0.8;
+	transition: all 0.15s ease-out;
+
+}
