@@ -27,9 +27,14 @@
     "time-grunt": "^1.1.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.10.0",
+    "npm":  "2.2.x"
+  },
+  "dependencies": {
+    "deployd": ">= 0"
   },
   "scripts": {
+    "start": "node server.js",
     "test": "grunt test"
   },
   "eslintConfig": {
@@ -44,5 +49,6 @@
         "single"
       ]
     }
-  }
+  },
+  "license": "MIT"
 }
