@@ -35,7 +35,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall": "bower install"
   },
   "eslintConfig": {
     "env": {
