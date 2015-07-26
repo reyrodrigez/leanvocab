@@ -35,9 +35,9 @@
       <thead>
       <tbody>
         <tr ng-repeat="word in words">
-          <td>{{word.id}}</td>
-          <td>{{word.origin}}</td>
-          <td>{{word.target}}</td>
+          <td>{{$index + 1}}</td>
+          <td>{{word.eng}}</td>
+          <td>{{word.hun}}</td>
           <td>{{word.collection}}</td>
           <td>{{word.date}}</td>
        </tr>
