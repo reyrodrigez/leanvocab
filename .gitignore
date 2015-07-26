@@ -1,6 +1,8 @@
-/node_modules
-/design
-scss/.sass-cache
-.sass-cache
-/.dpd
-/data
+node_modules
+dist
+.tmp
+bower_components
+app
+app.dpd
+data
+resources
