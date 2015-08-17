@@ -1,15 +1,66 @@
+/* globals angular, window */
+
 'use strict';
 
 /* Controllers */
 
-leanVocabApp.controller('WordListCtrl', ['$scope', '$http', function($scope, $http) {
-  $http({
-          url: "//leanvocab.herokuapp.com/words",
-          method: "GET",
-          data: [],
-          params: {foo: $scope.foo}
-        }).success(function(data, status) {
-            $scope.words = data;
-        });
+var leanVocabCtrls = angular.module('leanVocabCtrls', []);
 
-}]);
+leanVocabCtrls.controller('WordListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+    $http({
+      url: '//leanvocab.herokuapp.com/words',
+      method: 'GET'
+    }).success(function( data) {
+        $scope.words = data;
+    });
+
+    $scope.swapWord = function (word, index) {
+      $http({
+        url: '//leanvocab.herokuapp.com/words/' + word.id,
+        data: {
+          hun: word.eng,
+          eng: word.hun
+        },
+        method: 'POST'
+      }).success(function(data) {
+        $scope.words[index] = data;
+      });
+    };
+
+    $scope.deleteWord = function (word, index) {
+      if (!window.confirm('Are you sure you\'d like to delete this item?')) {
+        return true;
+      }
+      $http({
+        url: '//leanvocab.herokuapp.com/words/' + word.id,
+        method: 'DELETE'
+      }).success(function() {
+        $scope.words.splice(index, 1);
+      });
+    };
+  }
+]);
+
+leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    var wordId = $routeParams.wordId;
+
+    $http({
+      url: '//leanvocab.herokuapp.com/words/' + wordId,
+      method: 'GET'
+    }).success(function( data) {
+        $scope.word = data;
+    });
+
+    $scope.save = function () {
+      var data = angular.copy($scope.word);
+      $http({
+        url: '//leanvocab.herokuapp.com/words/',
+        method: 'POST',
+        data: data
+      }).success(function() {
+          console.log('saved');
+      });
+    };
+  }]);

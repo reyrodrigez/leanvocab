@@ -23,30 +23,13 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <table class="table" ng-controller="WordListCtrl">
-      <thead>
-        <tr>
-          <th>#1</th>
-          <th>origin</th>
-          <th>target</th>
-          <th>collection</th>
-          <th>date</th>
-        </tr>
-      <thead>
-      <tbody>
-        <tr ng-repeat="word in words">
-          <td>{{$index + 1}}</td>
-          <td>{{word.eng}}</td>
-          <td>{{word.hun}}</td>
-          <td>{{word.collection}}</td>
-          <td>{{word.date}}</td>
-       </tr>
-     </tbody>
-    </table>
-
+    <div class="container">
+      <div ng-view></div>
+    </div>
 
     <!-- build:js(.) scripts/plugins.js -->
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbuild -->
 
 

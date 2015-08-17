@@ -1,0 +1,23 @@
+<div>
+  <ol class="breadcrumb">
+    <li><a href="manage.html#/words">words</a></li>
+    <li>{{word.id}}</li>
+  </ol>
+  <form ng-submit="save()" novalidate ng-controller="EditWordCtrl">
+    <input type="hidden" value="{{word.id}}">
+    <div class="form-group">
+      <label for="origin">Origin</label>
+      <input type="text" ng-model="word.hun" class="form-control" id="origin" placeholder="origin">
+    </div>
+    <div class="form-group">
+      <label for="target">Target</label>
+      <input type="text" ng-model="word.eng" class="form-control" id="target" placeholder="target">
+    </div>
+    <div class="form-group">
+      <label for="target">Date added</label>
+      <input type="text" disabled class="form-control" value={{word.createdDate|date:'medium'}}>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
