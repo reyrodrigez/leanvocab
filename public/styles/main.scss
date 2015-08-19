@@ -4,15 +4,48 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$primary-color: rgba(37, 169, 158, 0.6);
+$secondary-color: rgba(253, 45, 7, 0.6);
+
+body {
+  background-color: $primary-color;
+}
+
+.table {
+  margin: 0;
+
+  & > tbody > tr > td {
+    line-height: 4rem;
+    border-top: 1px solid $primary-color;
+    text-shadow: 1px 1px 0 #fff;
+  }
+}
 
 .words-list__row {
-  select {
-    opacity: 0;
-  }
+  background-color: rgba(255, 255, 255, 0.9);
 
-  &:hover {
-    select {
-      opacity: 1;
-    }
+  &:hover .list-tools {
+    right:0;
   }
+}
+
+.list-tools-cont {
+  padding: 0!important;
+}
+
+.list-tools {
+  position: absolute;
+  right: -200px;
+  background: #fff;
+  transition: right 0.3s ease-out;
+
+  a {
+    text-decoration: none;
+    padding: 21px;
+  }
+}
+
+.table-striped>tbody>tr:nth-child(odd),
+.table-striped>tbody>tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.6);
 }

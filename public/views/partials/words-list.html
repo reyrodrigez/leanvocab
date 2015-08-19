@@ -1,25 +1,25 @@
-<table class="table table-striped" ng-controller="WordListCtrl">
-  <thead>
+<table class="table table-striped" >
+  <!-- <thead>
     <tr>
-      <th>#</th>
-      <th>origin</th>
+      <th></th>
       <th>target</th>
-      <!-- <th>collection</th> -->
-      <!-- <th>date</th> -->
+      <th>collection</th>
+      <th>date</th>
       <th></th>
     </tr>
-  <thead>
-  <tbody>
+  <thead> -->
+  <tbody ng-controller="WordListCtrl">
     <tr class="words-list__row" ng-repeat="word in words" ng-model="word">
-      <td>{{$index + 1}}</td>
       <td>{{word.eng}}</td>
       <td>{{word.hun}}</td>
       <!-- <td>{{word.collection}}</td> -->
       <!-- <td>{{word.date}}</td> -->
-      <td>
-        <a class="glyphicon glyphicon-pencil" href="#/edit/{{word.id}}"></a>
-        <a class="glyphicon glyphicon-remove" ng-click="deleteWord(word, $index)"></a>
-        <a class="glyphicon glyphicon-refresh" ng-click="swapWord(word, $index)"></a>
+      <td class="list-tools-cont">
+        <div class="list-tools">
+          <a class="glyphicon glyphicon-pencil" href="#/edit/{{word.id}}"></a>
+          <a class="glyphicon glyphicon-remove" ng-click="deleteWord(word, $index)"></a>
+          <a class="glyphicon glyphicon-refresh" ng-click="swapWord(word, $index)"></a>
+        </div>
       </td>
    </tr>
  </tbody>
