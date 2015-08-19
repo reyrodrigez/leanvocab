@@ -4,9 +4,9 @@
   "timeout": 120000,
   "registry": {
     "search": [
+      "https://bower.herokuapp.com",
       "http://localhost:9000",
-      "https://leanvocab.herokuapp.com",
-      "https://bower.herokuapp.com"
+      "https://leanvocab.herokuapp.com"
     ]
   }
 }
