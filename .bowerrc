@@ -5,6 +5,7 @@
   "registry": {
     "search": [
       "http://localhost:9000",
+      "https://leanvocab.herokuapp.com",
       "https://bower.herokuapp.com"
     ]
   }
