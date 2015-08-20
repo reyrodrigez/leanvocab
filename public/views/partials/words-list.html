@@ -9,13 +9,17 @@
     </tr>
   <thead> -->
   <tbody ng-controller="WordListCtrl">
-    <tr class="words-list__row" ng-repeat="word in words" ng-model="word">
-      <td>{{word.eng}}</td>
-      <td>{{word.hun}}</td>
+    <tr class="words-list__row" ng-click="word.active = !word.active" ng-repeat="word in words" ng-model="word">
+      <td>
+        {{word.eng}}
+      </td>
+      <td>
+        {{word.hun}}
+      </td>
       <!-- <td>{{word.collection}}</td> -->
       <!-- <td>{{word.date}}</td> -->
       <td class="list-tools-cont">
-        <div class="list-tools">
+        <div ng-class="{active: word.active}" class="list-tools">
           <a class="glyphicon glyphicon-pencil" href="#/edit/{{word.id}}"></a>
           <a class="glyphicon glyphicon-remove" ng-click="deleteWord(word, $index)"></a>
           <a class="glyphicon glyphicon-refresh" ng-click="swapWord(word, $index)"></a>
