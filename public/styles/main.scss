@@ -1,11 +1,35 @@
 $icon-font-path: "../components/bootstrap-sass/assets/fonts/bootstrap/";
 
-// bower:scss
-@import "components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
+
+@import "../components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 $primary-color: rgba(37, 169, 158, 0.6);
 $secondary-color: rgba(253, 45, 7, 0.6);
+
+.warning-message {
+  text-align: center;
+  display: none;
+  margin-top: 100px;
+
+  .glyphicon {
+    font-size: 72px;
+    color: #fff;
+  }
+
+  p {
+    margin: 30px;
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+  @media only screen and (orientation:portrait) and (max-width: 768px){
+    .wrapper { display:none; }
+    .warning-message { display:block; }
+  }
+  @media only screen and (orientation:landscape) and (min-width: 769px){
+    .warning-message { display:none; }
+  }
 
 body {
   background-color: $primary-color;
@@ -13,31 +37,38 @@ body {
 
 .table {
   margin: 0;
+  table-layout: fixed;
 
   & > tbody > tr > td {
     line-height: 4rem;
     border-top: 1px solid $primary-color;
     text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 50%;
   }
 }
 
 .words-list__row {
   background-color: rgba(255, 255, 255, 0.9);
-
-  &:hover .list-tools {
-    right:0;
-  }
 }
 
 .list-tools-cont {
-  padding: 0!important;
+  position: relative;
 }
 
 .list-tools {
   position: absolute;
-  right: -200px;
+  top: 0;
+  right: -30px;
   background: #fff;
-  transition: right 0.3s ease-out;
+  transition: all 0.3s cubic-bezier(0.55, 0.06, 0.68, 1.82);
+  padding-right: 30px;
+
+  &.ng-hide {
+    right: -210px;
+  }
 
   a {
     text-decoration: none;
