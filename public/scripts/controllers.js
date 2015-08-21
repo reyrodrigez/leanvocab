@@ -8,6 +8,8 @@ var leanVocabCtrls = angular.module('leanVocabCtrls', []);
 
 leanVocabCtrls.controller('WordListCtrl', ['$scope', '$http',
   function($scope, $http) {
+    $scope.selectedIndex = -1;
+
     $http({
       url: '//leanvocab.herokuapp.com/words',
       method: 'GET'
@@ -38,6 +40,14 @@ leanVocabCtrls.controller('WordListCtrl', ['$scope', '$http',
       }).success(function() {
         $scope.words.splice(index, 1);
       });
+    };
+
+    $scope.itemClicked = function ($index, toolsOn) {
+      if ($index === $scope.selectedIndex) {
+          $scope.selectedIndex = -1;
+      } else {
+        $scope.selectedIndex = $index;
+      }
     };
   }
 ]);
