@@ -2,6 +2,7 @@ $icon-font-path: "../components/bootstrap-sass/assets/fonts/bootstrap/";
 
 
 @import "../components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import url(http://fonts.googleapis.com/css?family=Slabo+27px);
 
 $primary-color: rgba(37, 169, 158, 0.6);
 $secondary-color: rgba(253, 45, 7, 0.6);
@@ -40,8 +41,11 @@ body {
   table-layout: fixed;
 
   & > tbody > tr > td {
-    line-height: 4rem;
-    border-top: 1px solid $primary-color;
+    line-height: 4.5rem;
+    font-family: 'Slabo 27px', serif;
+    font-size: 18px;
+    border-top: 1px solid #fff;
+    padding: 8px 16px;
     text-shadow: 1px 1px 0 #fff;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -61,18 +65,19 @@ body {
 .list-tools {
   position: absolute;
   top: 0;
-  right: -30px;
+  right: -40px;
   background: #fff;
   transition: all 0.3s cubic-bezier(0.55, 0.06, 0.68, 1.82);
-  padding-right: 30px;
+  padding-right: 40px;
 
   &.ng-hide {
-    right: -210px;
+    right: -233px;
   }
 
   a {
+    color: $secondary-color;
     text-decoration: none;
-    padding: 21px;
+    padding: 22px;
   }
 }
 
