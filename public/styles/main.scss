@@ -7,6 +7,30 @@ $icon-font-path: "../components/bootstrap-sass/assets/fonts/bootstrap/";
 $primary-color: rgba(37, 169, 158, 0.6);
 $secondary-color: rgba(253, 45, 7, 0.6);
 
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin on-the-edge {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+
+body {
+  @include on-the-edge;
+  height: 100%;
+  // background: $primary-color;
+  background: #fff  ;
+  -webkit-font-smoothing: antialiased;
+}
+
 .warning-message {
   text-align: center;
   display: none;
@@ -34,12 +58,9 @@ $secondary-color: rgba(253, 45, 7, 0.6);
     .warning-message { display:none; }
   }
 
-body {
-  background-color: $primary-color;
-}
-
 .table {
   margin: 0;
+  background: $primary-color;
   table-layout: fixed;
 
   & > tbody > tr > td {
@@ -87,4 +108,109 @@ body {
 .table-striped>tbody>tr:nth-child(odd),
 .table-striped>tbody>tr:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 28px 16px;
+  font-family: 'Slabo 27px', serif;
+  font-size: 18px;
+  color: #666;
+  text-shadow: 1px 1px 0 #fff;
+  border: 1px solid #fff;
+  box-shadow: none;
+}
+
+.container-fluid,
+.app-container,
+.flip-container,
+.add-word-container,
+.flipper,
+.card,
+.card > div {
+  width: 100%;
+  height: 100%;
+}
+
+.container-fluid > .row {
+  height: 100%;
+}
+
+.add-word-container {
+  padding: 3rem;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.app-container {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.main-container {
+  padding: 3rem;
+}
+
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front {
+  z-index: 2;
+  background-color: $secondary-color;
+}
+
+.back {
+  background-color: $primary-color;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+/* flip the pane when hovered */
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  @include vertical-align;
+  @include on-the-edge;
+  font-size: 13vw;
+  text-align: center;
+  font-weight: 200;
+  color: #fff;
 }

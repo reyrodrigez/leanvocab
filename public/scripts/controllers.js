@@ -1,4 +1,4 @@
-/* globals angular, window */
+/* globals angular, window, _ */
 
 'use strict';
 
@@ -73,4 +73,37 @@ leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http',
           console.log('saved');
       });
     };
-  }]);
+  }
+]);
+
+leanVocabCtrls.controller('TestCtrl', ['$scope', '$http',
+  function($scope, $http) {
+    var words;
+
+    $http({
+      url: '//leanvocab.herokuapp.com/words',
+      method: 'GET'
+    }).success(function( data) {
+        words = data;
+        resetWord();
+    });
+
+    function resetWord() {
+      $scope.word = _.shuffle(words)[0];
+    }
+
+    $scope.flip = function () {
+      return !$scope.word.flip;
+    };
+
+    $scope.answerRight = function () {
+      console.log('right');
+    };
+    $scope.answerWrong = function () {
+      console.log('wrong');
+    };
+    $scope.answerAlmost = function () {
+      console.log('almost');
+    };
+  }
+]);
