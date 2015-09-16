@@ -1,9 +1,8 @@
-<div class="flip-container" ng-class="className" ng-controller="TestCtrl">
+<div class="flip-container" ng-class="{hover: hover}" ng-controller="TestCtrl">
 	<div class="flipper">
 		<div class="main">
 			<div ng-click="flip()" class="js_card-front card front"><h1>{{word.hun}}</h1></div>
 				<div class="js_card-back card back"><h1>{{word.eng}}</h1></div>
-				<div class="js_login login"></div>
 			</div>
 		</div>
 	</div>

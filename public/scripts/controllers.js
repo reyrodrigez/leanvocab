@@ -80,6 +80,8 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http',
   function($scope, $http) {
     var words;
 
+    $scope.hover = false;
+
     $http({
       url: '//leanvocab.herokuapp.com/words',
       method: 'GET'
@@ -93,7 +95,7 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http',
     }
 
     $scope.flip = function () {
-      return !$scope.word.flip;
+      $scope.hover = !$scope.hover;
     };
 
     $scope.answerRight = function () {
