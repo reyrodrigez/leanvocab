@@ -76,8 +76,8 @@ leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http',
   }
 ]);
 
-leanVocabCtrls.controller('TestCtrl', ['$scope', '$http',
-  function($scope, $http) {
+leanVocabCtrls.controller('TestCtrl', ['$scope', '$http', '$timeout',
+  function($scope, $http, $timeout) {
     var words;
 
     $scope.hover = false;
@@ -87,25 +87,29 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http',
       method: 'GET'
     }).success(function( data) {
         words = data;
-        resetWord();
+        $scope.word = _.shuffle(words)[0];
     });
 
     function resetWord() {
-      $scope.word = _.shuffle(words)[0];
+      $scope.hover = !$scope.hover;
+      $timeout(function () {
+        $scope.word = _.shuffle(words)[0];
+      }, 290);
     }
 
     $scope.flip = function () {
       $scope.hover = !$scope.hover;
     };
 
-    $scope.answerRight = function () {
+    $scope.correctAnswer = function ($event) {
+      $event.stopPropagation();
       console.log('right');
+      resetWord();
     };
-    $scope.answerWrong = function () {
+    $scope.wrongAnswer = function ($event) {
+      $event.stopPropagation();
       console.log('wrong');
-    };
-    $scope.answerAlmost = function () {
-      console.log('almost');
+      resetWord();
     };
   }
 ]);

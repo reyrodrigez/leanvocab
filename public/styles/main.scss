@@ -214,3 +214,17 @@ h1 {
   font-weight: 200;
   color: #fff;
 }
+
+.test__btn {
+  position: absolute;
+  bottom: 0;
+}
+
+.test__btn--right {
+  left: 0;
+}
+
+.test__btn--wrong {
+  right: 0;
+}
+
