@@ -113,3 +113,11 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http', '$timeout',
     };
   }
 ]);
+
+leanVocabCtrls.controller('AddCtrl', ['$scope',
+  function ($scope) {
+    $scope.hello = function () {
+      alert('hello');
+    };
+  }
+]);

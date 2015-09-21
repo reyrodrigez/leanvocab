@@ -22,6 +22,10 @@ leanVocabApp.config(['$routeProvider',
         templateUrl: 'views/partials/test.html',
         controller: 'TestCtrl'
       })
+      .when('/add', {
+        templateUrl: 'views/partials/add.html',
+        controller: 'AddCtrl'
+      })
       .otherwise({
         redirectTo: '/words'
       });

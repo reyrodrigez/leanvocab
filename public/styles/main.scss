@@ -125,6 +125,7 @@ body {
 .app-container,
 .flip-container,
 .add-word-container,
+.add-container,
 .flipper,
 .card,
 .card > div {
@@ -252,3 +253,39 @@ h1 {
   }
 }
 
+.add-container {
+  background: $primary-color;
+}
+
+.input-cont {
+  padding: 6vw 1vw 1vw;
+
+  &+.input-cont {
+    padding: 1vw;
+  }
+
+  input {
+    font-family: 'Slabo 27px', serif;
+    color: $secondary-color;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    padding: 1.5vw;
+    font-size: 3vw;
+  }
+}
+
+.add-btn {
+  margin: 0 auto;
+  width: 3vw;
+  text-align: center;
+
+  span {
+    color: $secondary-color;
+    font-size: 4vw;
+    background-color: #fff;
+    padding: 2vw;
+    border-radius: 50%;
+  }
+}
