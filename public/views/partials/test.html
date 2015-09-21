@@ -4,8 +4,12 @@
 			<div class="card front"><h1>{{word.hun}}</h1></div>
 				<div class="card back">
 					<h1>{{word.eng}}</h1>
-					<a class="test__btn test__btn--right" ng-click="correctAnswer($event)">correct</a>
-					<a class="test__btn test__btn--wrong" ng-click="wrongAnswer($event)">wrong</a>
+					<a class="test__btn test__btn--right" ng-click="correctAnswer($event)">
+						<span class="test__btn--icon glyphicon glyphicon-remove"></span>
+					</a>
+					<a class="test__btn test__btn--wrong" ng-click="wrongAnswer($event)">
+						<span class="test__btn--icon glyphicon glyphicon-ok"></span>
+					</a>
 				</div>
 			</div>
 		</div>

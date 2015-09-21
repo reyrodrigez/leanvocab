@@ -218,13 +218,37 @@ h1 {
 .test__btn {
   position: absolute;
   bottom: 0;
+  display: block;
+  width: 50%;
+  height: 100%;
+}
+
+.test__btn--icon {
+  position: absolute;
+  bottom: 1vw;
+  display: inherit;
+  top: auto;
+  color: $primary-color;
+  font-size: 4vw;
+  background-color: #fff;
+  padding: 2vw;
+  border-radius: 50%;
 }
 
 .test__btn--right {
   left: 0;
+
+  .test__btn--icon {
+    left: 1vw;
+  }
 }
 
 .test__btn--wrong {
   right: 0;
+  text-align: right;
+
+  .test__btn--icon {
+    right: 1vw;
+  }
 }
 
