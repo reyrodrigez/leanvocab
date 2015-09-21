@@ -27,6 +27,6 @@ leanVocabApp.config(['$routeProvider',
         controller: 'AddCtrl'
       })
       .otherwise({
-        redirectTo: '/words'
+        redirectTo: '/test'
       });
   }]);

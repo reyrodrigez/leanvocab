@@ -103,12 +103,10 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http', '$timeout',
 
     $scope.correctAnswer = function ($event) {
       $event.stopPropagation();
-      console.log('right');
       resetWord();
     };
     $scope.wrongAnswer = function ($event) {
       $event.stopPropagation();
-      console.log('wrong');
       resetWord();
     };
   }
