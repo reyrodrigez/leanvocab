@@ -258,10 +258,10 @@ h1 {
 }
 
 .input-cont {
-  padding: 6vw 1vw 1vw;
+  padding: 10vw 2.5vw 3.5vw;
 
   &+.input-cont {
-    padding: 1vw;
+    padding: 2.5vw 2.5vw 5vw;
   }
 
   input {
@@ -272,7 +272,7 @@ h1 {
     border: 0;
     box-shadow: none;
     padding: 1.5vw;
-    font-size: 3vw;
+    font-size: 5vw;
   }
 }
 
@@ -283,9 +283,9 @@ h1 {
 
   span {
     color: $secondary-color;
-    font-size: 4vw;
+    font-size: 5.5vw;
     background-color: #fff;
-    padding: 2vw;
+    padding: 3vw;
     border-radius: 50%;
   }
 }
