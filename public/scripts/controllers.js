@@ -52,16 +52,14 @@ leanVocabCtrls.controller('WordListCtrl', ['$scope', '$http',
   }
 ]);
 
-leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
+leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http', 'dataservice',
+  function($scope, $routeParams, $http, dataservice) {
     var wordId = $routeParams.wordId;
 
-    $http({
-      url: '//leanvocab.herokuapp.com/words/' + wordId,
-      method: 'GET'
-    }).success(function( data) {
-        $scope.word = data;
-    });
+    dataservice.getWordById(wordId)
+      .then(function(response) {
+        $scope.word = response.data;
+      });
 
     $scope.save = function () {
       var data = angular.copy($scope.word);

@@ -1,5 +1,9 @@
 (function () {
 
+	window.leanvocabMeta = {
+		baseUrl: '//leanvocab.herokuapp.com/'
+	};
+
 	angular
 		.module('app', ['ngRoute', 'leanVocabCtrls'])
 		.config(config);
