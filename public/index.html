@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="leanVocabApp">
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>leanvocab</title>
@@ -8,20 +8,10 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
   </head>
   <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <div id="menu">
     	<a class="menu__btn" href="/#/test"><span class="glyphicon glyphicon-heart-empty"></span></a>
@@ -32,13 +22,12 @@
       <div class="row" ng-view></div>
     </div>
 
-    <script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="/components/angular/angular.js"></script>
     <script src="/components/angular-route/angular-route.js"></script>
 
     <script src="scripts/controllers.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/app.js"></script>
 
     <!-- Google Analytics -->
     <script>
