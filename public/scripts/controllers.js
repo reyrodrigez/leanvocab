@@ -1,4 +1,4 @@
-/* globals angular, window, _ */
+/* globals angular, window*/
 
 'use strict';
 
@@ -78,9 +78,11 @@ leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http',
 
 leanVocabCtrls.controller('TestCtrl', ['$scope', '$http', '$timeout',
   function($scope, $http, $timeout) {
-    var words;
+    var words,
+        answers = [];
 
     $scope.hover = false;
+
 
     $http({
       url: '//leanvocab.herokuapp.com/words',
@@ -88,12 +90,17 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http', '$timeout',
     }).success(function( data) {
         words = data;
         $scope.word = _.shuffle(words)[0];
+        if ($scope.word.answers)
+          answers = $scope.word.answers;
     });
 
     function resetWord() {
+      answers = [];
       $scope.hover = !$scope.hover;
       $timeout(function () {
         $scope.word = _.shuffle(words)[0];
+        if ($scope.word.answers)
+          answers = $scope.word.answers;
       }, 290);
     }
 
@@ -102,12 +109,28 @@ leanVocabCtrls.controller('TestCtrl', ['$scope', '$http', '$timeout',
     };
 
     $scope.correctAnswer = function ($event) {
+      answers.push(true);
+
       $event.stopPropagation();
-      resetWord();
+      $http({
+        url: '//leanvocab.herokuapp.com/words/' + $scope.word.id,
+        method: 'PUT',
+        data: {answers: answers}
+      }).success(function( data) {
+          resetWord();
+      });
+      
     };
     $scope.wrongAnswer = function ($event) {
+      answers.push(false);
       $event.stopPropagation();
-      resetWord();
+      $http({
+        url: '//leanvocab.herokuapp.com/words/' + $scope.word.id,
+        method: 'PUT',
+        data: {answers: answers}
+      }).success(function( data) {
+          resetWord();
+      });
     };
   }
 ]);
