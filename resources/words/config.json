@@ -16,6 +16,14 @@
 			"required": true,
 			"id": "eng",
 			"order": 1
+		},
+		"answers": {
+			"name": "answers",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "answers",
+			"order": 2
 		}
 	}
 }
