@@ -1,4 +1,4 @@
-/* globals angular, window*/
+/* globals angular, window, _*/
 
 'use strict';
 
