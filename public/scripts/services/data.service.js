@@ -11,10 +11,19 @@
 
 	function dataservice ($http) {
 		return {
+			addWord: addWord,
 			getWordById: getWordById,
 			getWords: getWords,
 			updateWord: updateWord
 		};
+
+		function addWord (data) {
+			return $http({
+				url: window.leanvocabMeta.baseUrl + 'words',
+				method: 'POST',
+				data: data
+			});
+		}
 
 		function getWords () {
 			return $http.get(window.leanvocabMeta.baseUrl + 'words');

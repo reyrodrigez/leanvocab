@@ -19,14 +19,15 @@
 			// 	controller: 'EditWordCtrl'
 			// })
 			.when('/test', {
-				templateUrl: 'views/partials/test2.html',
+				templateUrl: 'views/partials/test.html',
 				controller: 'TestController',
 				controllerAs: 'test'
 			})
-			// .when('/add', {
-			// 	templateUrl: 'views/partials/add.html',
-			// 	controller: 'AddCtrl'
-			// })
+			.when('/add', {
+				templateUrl: 'views/partials/add.html',
+				controller: 'AddController',
+				controllerAs: 'add'
+			})
 			.otherwise({
 				redirectTo: '/test'
 			});
