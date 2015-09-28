@@ -1,0 +1,17 @@
+<div class="flip-container" ng-click="test.flipCard()" ng-class="{hover: test.hover}">
+	<div class="flipper">
+		<div class="main">
+			<div class="card front"><h1>{{test.word.hun}}</h1></div>
+				<div class="card back">
+					<h1>{{test.word.eng}}</h1>
+					<a class="test__btn test__btn--right" ng-click="test.giveAnswer($event, false)">
+						<span class="test__btn--icon glyphicon glyphicon-remove"></span>
+					</a>
+					<a class="test__btn test__btn--wrong" ng-click="test.giveAnswer($event, true)">
+						<span class="test__btn--icon glyphicon glyphicon-ok"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

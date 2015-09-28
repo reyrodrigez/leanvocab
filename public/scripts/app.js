@@ -5,27 +5,28 @@
 	};
 
 	angular
-		.module('app', ['ngRoute', 'leanVocabCtrls'])
+		.module('app', ['ngRoute', 'controllers'])
 		.config(config);
 
 	function config ($routeProvider) {
 		$routeProvider
-			.when('/words', {
-				templateUrl: 'views/partials/words-list.html',
-				controller: 'WordListCtrl'
-			})
-			.when('/edit/:wordId', {
-				templateUrl: 'views/partials/edit-word.html',
-				controller: 'EditWordCtrl'
-			})
+			// .when('/words', {
+			// 	templateUrl: 'views/partials/words-list.html',
+			// 	controller: 'WordListCtrl'
+			// })
+			// .when('/edit/:wordId', {
+			// 	templateUrl: 'views/partials/edit-word.html',
+			// 	controller: 'EditWordCtrl'
+			// })
 			.when('/test', {
-				templateUrl: 'views/partials/test.html',
-				controller: 'TestCtrl'
+				templateUrl: 'views/partials/test2.html',
+				controller: 'TestController',
+				controllerAs: 'test'
 			})
-			.when('/add', {
-				templateUrl: 'views/partials/add.html',
-				controller: 'AddCtrl'
-			})
+			// .when('/add', {
+			// 	templateUrl: 'views/partials/add.html',
+			// 	controller: 'AddCtrl'
+			// })
 			.otherwise({
 				redirectTo: '/test'
 			});
