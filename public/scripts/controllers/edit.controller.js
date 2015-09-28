@@ -5,13 +5,15 @@
 		.module('controllers')
 		.controller('EditController', EditController);
 
-	EditController.$inject = ['dataservice', '$routeParams'];
+	EditController.$inject = ['dataservice', '$routeParams', '$timeout'];
 
-	function EditController(dataservice, $routeParams) {
+	function EditController(dataservice, $routeParams, $timeout) {
 
 		var vm = this;
 
 		vm.word = {};
+		vm.addBtn = true;
+		vm.successBtn = false;
 		vm.submitForm = submitForm;
 
 		init();
@@ -27,12 +29,13 @@
 
 		function updateWord (id, data) {
 			dataservice.updateWord(id, data).then(function() {
-
+				toggleSuccessBtn();
 			});
 		}
 
 		function addWord (data) {
 			dataservice.addWord(data).then(function() {
+				toggleSuccessBtn();
 				vm.word = {};
 			});
 		}
@@ -50,6 +53,16 @@
 			} else {
 				alert('Please set both origin and target');
 			}
+		}
+
+		function toggleSuccessBtn () {
+			vm.addBtn = !vm.addBtn;
+			vm.successBtn = !vm.successBtn;
+
+			$timeout(function() {
+				vm.addBtn = !vm.addBtn;
+				vm.successBtn = !vm.successBtn;
+			}, 1000);
 		}
 
 	}
