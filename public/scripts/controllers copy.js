@@ -74,23 +74,3 @@ leanVocabCtrls.controller('EditWordCtrl', ['$scope', '$routeParams', '$http', 'd
   }
 ]);
 
-
-leanVocabCtrls.controller('AddCtrl', ['$scope', '$http',
-  function ($scope, $http) {
-    $scope.submit = function () {
-      if (!!$scope.word.hun && !!$scope.word.eng) {
-        $http({
-          url: '//leanvocab.herokuapp.com/words',
-          method: 'POST',
-          data: {hun: $scope.word.hun, eng: $scope.word.eng }
-        }).success(function( data) {
-          $scope.word = null;
-        });
-
-      } else {
-        alert('Please set both origin and target');
-      }
-      
-    };
-  }
-]);

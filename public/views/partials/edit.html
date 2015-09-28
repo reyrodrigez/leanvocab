@@ -1,0 +1,14 @@
+<div class="add-container">
+	<form ng-submit="edit.submitForm()">
+		<input type="hidden" value="{{edit.word.id}}">
+		<div class="input-cont">
+			<input type="text" placeholder="origin" ng-model="edit.word.hun">
+		</div>
+		<div class="input-cont">
+			<input type="text" placeholder="target" ng-model="edit.word.eng">
+		</div>
+		<div class="add-btn">
+			<span ng-click="edit.submitForm()" class="glyphicon glyphicon-plus"></span>
+		<div>
+	</form>
+</div>
