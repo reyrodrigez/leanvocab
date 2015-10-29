@@ -10,24 +10,39 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="stylesheet" href="styles/main.css">
+    <!-- Hotjar Tracking Code for leanvocab.herokuapp.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:95672,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
   </head>
   <body>
 
     <div id="menu">
     	<a class="menu__btn" href="/#/test"><span class="glyphicon glyphicon-heart-empty"></span></a>
     	<a class="menu__btn" href="/#/words"><span class="glyphicon glyphicon-align-justify"></span></a>
-    	<a class="menu__btn" href="/#/add"><span class="glyphicon glyphicon-plus"></span></a>
+    	<a class="menu__btn" href="/#/edit"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="container-fluid wrapper">
       <div class="row" ng-view></div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="/components/angular/angular.js"></script>
     <script src="/components/angular-route/angular-route.js"></script>
 
     <script src="scripts/controllers.js"></script>
+    <script src="scripts/controllers/test.controller.js"></script>
+    <script src="scripts/controllers/edit.controller.js"></script>
+    <script src="scripts/controllers/wordlist.controller.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/data.service.js"></script>
 
     <!-- Google Analytics -->
     <script>
